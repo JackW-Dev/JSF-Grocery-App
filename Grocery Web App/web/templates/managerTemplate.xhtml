@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+    </h:head>
+    <h:body style="background-color: #ffd7ea">
+        <h1 style="font-family: monospace">GROCERIES DIRECT </h1>
+        <div class="content">
+            <h:form>
+                <h:commandButton value="Add Product" action="addProduct?faces-redirect=true"/>
+                <h:commandButton value="Remove Product" action="removeProduct?faces-redirect=true"/>
+                <h:commandButton value="Adjust Product" action="#{productManager.productEdit()}"/>
+                <h:commandButton value="Add Store" action="addStore?faces-redirect=true"/>
+                <h:commandButton value="Remove Store" action="removeStore?faces-redirect=true"/>
+                <h:commandButton value="Adjust Store" action="#{storeManager.storeEdit()}"/>
+                <h:commandButton value="View Users" action="#{userManager.viewUsers()}"/>
+                <p>
+                    <h:commandButton value="Edit Details" action="accountDetailsMan?faces-redirect=true"/>
+                </p>
+            </h:form>
+            <p>
+                <ui:insert name="content">Main content</ui:insert>
+            </p>
+            <h:form>
+                <p>
+                    <h:commandButton type="submit" value="Logoff" action="#{userManager.logOff()}" /> 
+                </p>
+            </h:form>
+        </div>
+    </h:body>
+</html>
